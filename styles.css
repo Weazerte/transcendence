@@ -1,0 +1,189 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    /*background-image: url('Utils/piscine2.gif'); /* Chemin vers ton image PNG */
+    /*background-size: cover; /* Ajuste la taille de l'image */
+    /*background-repeat: no-repeat; /* Ne répète pas l'image */
+    /*background-position: center; /* Centre l'image dans le header */
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #70c1f7;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    font: small-caps bold 24px/1 sans-serif;
+    color: #1e48bb;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#registration-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#registration-form label {
+    margin-bottom: 5px;
+}
+
+#registration-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #ec8f8f;
+    border-radius: 10px;
+}
+
+#registration-form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#registration-form button:hover {
+    background-color: #ec8f8f;
+}
+
+#pongCanvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #8900e4;
+}
+
+footer {
+    /*
+    background-image: url('Utils/FooterFlower.gif'); /* Chemin vers ton image PNG */
+    /*background-size: cover; /* Ajuste la taille de l'image */
+    /*background-repeat: no-repeat; /* Ne répète pas l'image */
+    /*background-position: center; /* Centre l'image dans le footer */
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #ffffff;
+    width: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gif-border {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gif-border img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the button */
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
+
+/* Styles des étoiles */
+
+#stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Empêche d'interagir avec les étoiles */
+    z-index: -1; /* Place le conteneur d'étoiles derrière les autres éléments */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
