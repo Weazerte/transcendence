@@ -1,0 +1,70 @@
+site_name: ft_transcendence Documentation
+site_description: Developer documentation for the ft_transcendence project
+site_author: ft_transcendence Team
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - toc.integrate
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Backend Architecture: architecture/backend.md
+      - Frontend Architecture: architecture/frontend.md
+      - Database Schema: architecture/database.md
+  - Development Guides:
+      - Backend Development: development/backend-guide.md
+      - Frontend Development: development/frontend-guide.md
+  - API Reference:
+      - Authentication: api/authentication.md
+      - Users: api/users.md
+      - Game: api/game.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - mkdocstrings
+  - mermaid2
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/suiramdev/42-ft_transcendence
+
+repo_url: https://github.com/suiramdev/42-ft_transcendence
+edit_uri: edit/main/docs-site/docs/

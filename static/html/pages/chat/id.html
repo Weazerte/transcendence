@@ -1,0 +1,37 @@
+<div class="chat">
+  <div class="chat__container">
+    <div class="chat__header">
+      <div class="chat__avatar">
+        <img src="/static/images/avatars/duck.webp" class="chat__avatar-image" id="chat-avatar" />
+      </div>
+      <div class="chat__user-info">
+        <a class="chat__username" id="chat-username"></a>
+        <div class="chat__status" id="chat-status"></div>
+      </div>
+      <div class="chat__actions">
+        <button class="chat__invite-button" id="invite-button" data-i18n="chat.invite">Invite to Game</button>
+        <button class="chat__block-button" id="block-button" style="display: none" data-i18n="chat.block">
+          Block User
+        </button>
+        <button class="chat__unblock-button" id="unblock-button" style="display: none" data-i18n="chat.unblock">
+          Unblock User
+        </button>
+      </div>
+    </div>
+    <div class="chat__messages" id="chat-messages"></div>
+  </div>
+  <form class="chat__form" id="chat-form">
+    <div class="chat__form-container">
+      <textarea
+        class="chat__input"
+        name="message"
+        placeholder="Type a message..."
+        data-i18n-placeholder="chat.message"
+      ></textarea>
+      <div class="chat__actions">
+        <button class="chat__send-button" data-i18n="chat.send">Send</button>
+      </div>
+    </div>
+    <span class="chat__form-error" id="chat-form-error"></span>
+  </form>
+</div>

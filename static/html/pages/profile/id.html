@@ -1,0 +1,56 @@
+<section class="profile">
+  <div class="profile__banner">
+    <img src="/static/images/banners/beach.jpg" alt="Profile" class="profile__banner-image" />
+    <div class="profile__avatar">
+      <img src="/static/images/avatars/duck.webp" alt="Profile" class="profile__avatar-image" />
+      <svg
+        viewBox="0 0 94 94"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="profile__avatar-border"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path
+          d="M3.37848 10.055C3.74806 6.53209 6.53209 3.74806 10.055 3.37848L11.9962 3.17484C35.2682 0.733472 58.7318 0.733472 82.0038 3.17484L83.9449 3.37848C87.4679 3.74806 90.2519 6.53209 90.6215 10.055L90.8252 11.9962C93.2665 35.2682 93.2665 58.7318 90.8252 82.0038L90.6215 83.945C90.2519 87.4679 87.4679 90.2519 83.9449 90.6215L82.0038 90.8252C58.7318 93.2665 35.2682 93.2665 11.9962 90.8252L10.055 90.6215C6.53209 90.2519 3.74806 87.4679 3.37848 83.9449L3.17484 82.0038C0.733472 58.7318 0.733472 35.2682 3.17484 11.9962L3.37848 10.055Z"
+          fill="url(#paint0_linear_108_1972)"
+          stroke="#ACC4EA"
+        />
+        <defs>
+          <linearGradient id="paint0_linear_108_1972" x1="47" y1="-1" x2="47" y2="95" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CCDFFF" />
+            <stop offset="1" stop-color="#92B1E6" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <div class="profile__content">
+    <div class="profile__header">
+      <h1 class="profile__alias">DuckFan42</h1>
+      <button id="remove_friend" style="display: none">Remove Friend</button>
+    </div>
+    <p class="profile__bio">Passionné de ping-pong jvais vous niquer</p>
+    <div class="profile__stats">
+      <div class="profile__stats-item">
+        <span class="profile__stats-value">125</span>
+        <span class="profile__stats-label">Matchs joués</span>
+      </div>
+      <div class="profile__stats-item">
+        <span class="profile__stats-value">78%</span>
+        <span class="profile__stats-label">Win Rate</span>
+      </div>
+      <div class="profile__stats-item">
+        <span class="profile__stats-value">3</span>
+        <span class="profile__stats-label">Tournois gagnés</span>
+      </div>
+    </div>
+    <button class="profile__message-btn" id="message-btn">Message</button>
+    <div class="profile__history">
+      <h2 class="profile__history-title" data-i18n="profile.history">Historique des matchs</h2>
+      <ul class="profile__history-list">
+        <!-- Matchs ajoutés dynamiquement -->
+      </ul>
+    </div>
+  </div>
+</section>

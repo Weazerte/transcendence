@@ -1,0 +1,302 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.chat__container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f0;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+
+.chat__header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.chat__avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.chat__avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat__user-info {
+  flex: 1;
+}
+
+.chat__username {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.chat__status {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.chat__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat__block-button,
+.chat__unblock-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat__block-button {
+  background-color: #ff4444;
+  color: white;
+}
+
+.chat__block-button:hover {
+  background-color: #cc0000;
+}
+
+.chat__unblock-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.chat__unblock-button:hover {
+  background-color: #45a049;
+}
+
+.chat__messages {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.chat__message {
+  max-width: 70%;
+  position: relative;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat__message--sent {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.chat__message--received {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.chat__message-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  border-radius: 8px;
+  width: fit-content;
+  gap: 0.3rem;
+}
+
+.chat__message--sent .chat__message-content {
+  background-color: #007bff;
+  color: white;
+}
+
+.chat__message--received .chat__message-content {
+  background-color: white;
+  color: #333;
+}
+
+.chat__message-text {
+  word-wrap: break-word;
+}
+
+.chat__message--sent .chat__message-time {
+  text-align: right;
+}
+
+.chat__message-time {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.chat__message-error {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: #c00;
+}
+
+.chat__form-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 5px;
+}
+
+.chat__form-error {
+  display: none;
+  color: #c00;
+}
+
+.chat__input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  resize: none;
+}
+
+.chat__send-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat__send-button:hover {
+  background-color: #0056b3;
+}
+
+.chat__send-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.chat__error {
+  display: none;
+  background-color: #fee;
+  color: #c00;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #fcc;
+  text-align: center;
+}
+
+.chat__invite-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat__invite-button:hover {
+  background-color: #0056b3;
+}
+
+.chat__join-game-button {
+  display: block;
+  margin-top: 10px;
+  padding: 0.6rem 1.2rem;
+  background-color: #4169e1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.chat__join-game-button:hover {
+  background-color: #324da6;
+}
+
+.chat__message-game-invite {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 8px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(236, 235, 229, 1) 86%,
+    rgba(216, 208, 196, 1) 100%
+  );
+  border: 1px solid #003c74;
+  border-radius: 3px;
+  color: #000;
+  font-weight: normal;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 5px;
+  text-align: center;
+}
+
+.chat__message-game-invite:hover {
+  box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761,
+    inset 2px -2px #e5a01a;
+}
+
+.chat__message-game-invite:active {
+  box-shadow: none;
+  background: linear-gradient(180deg, rgba(205, 202, 195, 1) 0%, rgba(229, 229, 222, 1) 100%);
+}
+
+.chat__message--sent .chat__message-game-invite {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(236, 235, 229, 1) 86%,
+    rgba(216, 208, 196, 1) 100%
+  );
+  color: #000;
+  border: 1px solid #003c74;
+}
+
+.chat__message--sent .chat__message-game-invite:hover {
+  box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761,
+    inset 2px -2px #e5a01a;
+}
+
+.chat__message--sent .chat__message-game-invite:active {
+  box-shadow: none;
+  background: linear-gradient(180deg, rgba(205, 202, 195, 1) 0%, rgba(229, 229, 222, 1) 100%);
+}
+
+.chat__message-game-invite[disabled] {
+  opacity: 0.6;
+  background: linear-gradient(
+    180deg,
+    rgba(220, 220, 220, 1) 0%,
+    rgba(200, 200, 200, 1) 86%,
+    rgba(180, 180, 180, 1) 100%
+  );
+  border: 1px solid #7b7b7b;
+  color: #666;
+  box-shadow: none;
+  pointer-events: none;
+}

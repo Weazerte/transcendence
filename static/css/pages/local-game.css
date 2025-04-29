@@ -1,0 +1,488 @@
+/* Style de la page complète */
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial';
+  }
+  
+  .pregame-menu {
+    align-self: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  
+  .pregame-menu h2 {
+    background: #ece9d8;
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #003c74;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pregame-menu h3 {
+    background: #ece9d8;
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #003c74;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    aspect-ratio: 1/1;
+    width: 900px;
+    height: 500px;
+    margin: 0 auto 30px;
+  }
+  
+  .slider-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ece9d8;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .slider-container:hover {
+    transform: scale(1.02)
+  }
+  
+  .slider-container::before {
+    content: attr(data-title);
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    background: linear-gradient(
+      180deg,
+      rgba(9, 151, 255, 1) 0%,
+      rgba(0, 83, 238, 1) 8%,
+      rgba(0, 80, 238, 1) 40%,
+      rgba(0, 102, 255, 1) 88%,
+      rgba(0, 102, 255, 1) 93%,
+      rgba(0, 91, 255, 1) 95%,
+      rgba(0, 61, 215, 1) 96%,
+      rgba(0, 61, 215, 1) 100%
+    );
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 10px;
+    height: 25px;
+    text-shadow: 1px 1px #0f1089;
+  }
+  
+  /* Couleurs différentes pour chaque barre de titre */
+  .slider-container:nth-child(1)::before {
+    content: "Ball Speed";
+    background: linear-gradient(
+      180deg,
+      rgba(9, 151, 255, 1) 0%,
+      rgba(0, 83, 238, 1) 100%
+    );
+  }
+  
+  .slider-container:nth-child(2)::before {
+    content: "Paddle Size";
+    background: linear-gradient(
+      180deg,
+      rgba(124, 187, 0, 1) 0%,
+      rgba(80, 140, 0, 1) 100%
+    );
+  }
+  
+  .slider-container:nth-child(3)::before {
+    content: "Paddle Speed";
+    background: linear-gradient(
+      180deg,
+      rgba(242, 80, 34, 1) 0%,
+      rgba(200, 40, 0, 1) 100%
+    );
+  }
+  
+  .slider-container:nth-child(4)::before {
+    content: "Ball size";
+    background: linear-gradient(
+      180deg,
+      rgba(255, 185, 0, 1) 0%,
+      rgba(210, 150, 0, 1) 100%
+    );
+  }
+  
+  /* Conteneur du contenu du slider */
+  .slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Add a new wrapper for the input and value */
+  .slider-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  /* Modify the input range style */
+  .slider-container input[type="range"] {
+    width: 70%;
+    height: 12px;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    margin: 0;
+  }
+  
+  /* Modify the value span style */
+  .slider-container span {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: calc(80% + 15px); /* Position after the slider */
+    transform: translateY(-50%);
+    white-space: nowrap;
+  }
+  
+  .slider-container input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(236, 235, 229, 1) 86%,
+      rgba(216, 208, 196, 1) 100%
+    );
+    border: 1px solid #003c74;
+    cursor: pointer;
+  }
+  
+  /* Style des valeurs de sliders */
+  .slider-container span {
+    color: #000;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 15px;
+  }
+  
+  /* Styles des boutons */
+  #start-game {
+    padding: 8px 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(236, 235, 229, 1) 86%,
+      rgba(216, 208, 196, 1) 100%
+    );
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 5px;
+    display: block;
+    margin: 0 auto 20px;
+    min-width: 120px;
+  }
+  
+  #start-game:hover {
+    box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761,
+      inset 2px -2px #e5a01a;
+  }
+  
+  #start-game:active {
+    box-shadow: none;
+    background: linear-gradient(
+      180deg,
+      rgba(205, 202, 195, 1) 0%,
+      rgba(229, 229, 222, 1) 100%
+    );
+  }
+  
+  .score-selector {
+    background: #ece9d8;
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .score-selector-title {
+    color: #003c74;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .xp-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #000;
+  }
+  
+  .xp-radio input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-custom {
+    width: 13px;
+    height: 13px;
+    border: 1px solid #003c74;
+    border-radius: 50%;
+    margin-right: 5px;
+    background: white;
+    position: relative;
+  }
+  
+  .xp-radio input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #003c74;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .xp-radio:hover .radio-custom {
+    box-shadow: 0 0 2px #003c74;
+  }
+  
+  #end-game-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  .end-game-window {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    background-color: #ECE9D8;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #0055EA;
+  }
+  
+  .window__titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(
+      180deg,
+      rgba(9, 151, 255, 1) 0%,
+      rgba(0, 83, 238, 1) 8%,
+      rgba(0, 80, 238, 1) 40%,
+      rgba(0, 102, 255, 1) 88%,
+      rgba(0, 102, 255, 1) 93%,
+      rgba(0, 91, 255, 1) 95%,
+      rgba(0, 61, 215, 1) 96%,
+      rgba(0, 61, 215, 1) 100%
+    );
+    padding: 5px 8px;
+    color: white;
+    height: 25px;
+  }
+  
+  .window__title {
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px #0F1089;
+  }
+  
+  .window__controls {
+    display: flex;
+  }
+  
+  .window__button {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    border: 1px solid white;
+    background: #ff3b3b;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  .window__button::before,
+  .window__button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 2px;
+    background: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .window__button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  .end-game-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .winner-trophy {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+  
+  #winner-name {
+    font-size: 24px;
+    color: #003399;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+  
+  .final-score {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .end-game-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .xp-button {
+    padding: 8px 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(236, 235, 229, 1) 86%,
+      rgba(216, 208, 196, 1) 100%
+    );
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .xp-button:hover {
+    box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761,
+      inset 2px -2px #e5a01a;
+  }
+  
+  .xp-button:active {
+    box-shadow: none;
+    background: linear-gradient(
+      180deg,
+      rgba(205, 202, 195, 1) 0%,
+      rgba(229, 229, 222, 1) 100%
+    );
+  }
+
+  .player-names {
+    background: #ece9d8;
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-names-title {
+    color: #003c74;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .player-input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .player-input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .player-input label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #000;
+  }
+  
+  .player-input input {
+    padding: 5px;
+    border: 1px solid #7b9ebd;
+    border-radius: 3px;
+    background-color: white;
+    font-family: 'Arial';
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .player-input input:focus {
+    border-color: #003c74;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 60, 116, 0.5);
+  }

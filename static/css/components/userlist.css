@@ -1,0 +1,62 @@
+.userlist {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.userlist__header {
+  display: flex;
+  align-items: center;
+  height: 23px;
+  padding: 0 12px;
+  background: linear-gradient(
+    to right,
+    rgb(240, 240, 255) 0px,
+    rgb(240, 240, 255) 30%,
+    rgb(168, 188, 255) 100%
+  );
+  color: rgb(28, 104, 255);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 3px 3px 0 0;
+}
+
+.userlist__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 6px 12px;
+  background: rgba(198, 211, 255, 0.87)
+    linear-gradient(
+      to right,
+      rgb(180, 200, 251) 0%,
+      rgb(164, 185, 251) 50%,
+      rgb(180, 200, 251) 100%
+    );
+  overflow-y: scroll;
+}
+
+.userlist__item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: initial;
+  text-decoration: none;
+}
+
+.userlist__item:hover {
+  cursor: pointer;
+  color: rgb(43, 114, 255);
+  text-decoration: underline;
+}
+
+.userlist__item--offline {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.userlist__item-icon {
+  width: 16px;
+  height: 16px;
+}

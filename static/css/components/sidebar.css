@@ -1,0 +1,77 @@
+/* Add Friend Button and Form Styles */
+.userlist__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .userlist__add-friend-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+  }
+  
+  .userlist__add-friend-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .userlist__add-friend-form {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .userlist__add-friend-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .userlist__add-friend-submit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .userlist__add-friend-submit:hover {
+    background-color: #218838;
+  }
+  
+  .userlist__add-friend-message {
+    margin-top: 8px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .userlist__add-friend-message--success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .userlist__add-friend-message--error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }

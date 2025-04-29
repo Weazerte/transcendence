@@ -1,0 +1,229 @@
+<section class="tournament">
+  <!-- Main menu screen -->
+  <div id="tournament-menu" class="tournament-window">
+    <div class="tournament__window__titlebar">
+      <div class="tournament__window__title" data-i18n="tournament.title">Tournament</div>
+      <div class="tournament__window__controls">
+        <div class="tournament__window__button"></div>
+      </div>
+    </div>
+    <div class="tournament__window__content">
+      <!-- <div class="tournament-logo">
+          <img src="/static/images/tournament-logo.png" alt="Tournament">
+        </div> -->
+      <h2 data-i18n="tournament.game.title">Pong Tournament</h2>
+      <p data-i18n="tournament.game.description">Play a 4-player tournament locally with your friends</p>
+      <div class="tournament__tournament-buttons">
+        <button id="create-tournament" class="xp-button" data-i18n="tournament.create">Create Tournament</button>
+        <button id="back-to-menu" class="xp-button" data-i18n="tournament.back">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player registration screen -->
+  <div id="player-registration" class="tournament-window" style="display: none">
+    <div class="tournament__window__titlebar">
+      <div class="tournament__window__title" data-i18n="tournament.player.registration">Player Registration</div>
+      <div class="tournament__window__controls">
+        <div class="tournament__window__button"></div>
+      </div>
+    </div>
+    <div class="tournament__window__content">
+      <div class="registration-form">
+        <div class="player-input">
+          <div class="xp-form-title" data-i18n="tournament.player.player1">Player 1</div>
+          <div class="xp-input-wrapper">
+            <input type="text" id="player1" class="xp-textbox" placeholder="Enter alias" maxlength="20" />
+          </div>
+        </div>
+        <div class="player-input">
+          <div class="xp-form-title" data-i18n="tournament.player.player2">Player 2</div>
+          <div class="xp-input-wrapper">
+            <input type="text" id="player2" class="xp-textbox" placeholder="Enter alias" maxlength="20" />
+          </div>
+        </div>
+        <div class="player-input">
+          <div class="xp-form-title" data-i18n="tournament.player.player3">Player 3</div>
+          <div class="xp-input-wrapper">
+            <input type="text" id="player3" class="xp-textbox" placeholder="Enter alias" maxlength="20" />
+          </div>
+        </div>
+        <div class="player-input">
+          <div class="xp-form-title" data-i18n="tournament.player.player4">Player 4</div>
+          <div class="xp-input-wrapper">
+            <input type="text" id="player4" class="xp-textbox" placeholder="Enter alias" maxlength="20" />
+          </div>
+        </div>
+      </div>
+      <div class="tournament-bracket">
+        <div class="bracket-title" data-i18n="tournament.bracket.title">Tournament Bracket</div>
+        <div class="bracket-diagram">
+          <div class="bracket-round">
+            <div class="bracket-match">
+              <div class="bracket-player" id="bracket-player1" data-i18n="tournament.bracket.player1">Player 1</div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="bracket-player2" data-i18n="tournament.bracket.player2">Player 2</div>
+            </div>
+            <div class="bracket-match">
+              <div class="bracket-player" id="bracket-player3" data-i18n="tournament.bracket.player3">Player 3</div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="bracket-player4" data-i18n="tournament.bracket.player4">Player 4</div>
+            </div>
+          </div>
+          <div class="bracket-connector"></div>
+          <div class="bracket-round">
+            <div class="bracket-match final-match">
+              <div class="bracket-player" id="bracket-finalist1" data-i18n="tournament.bracket.finalist1">Winner 1</div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="bracket-finalist2" data-i18n="tournament.bracket.finalist2">Winner 2</div>
+            </div>
+            <div class="bracket-match loser-final-match">
+              <div class="bracket-player" id="bracket-loserfinalist1" data-i18n="tournament.bracket.loserfinalist1">
+                Loser 1
+              </div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="bracket-loserfinalist2" data-i18n="tournament.bracket.loserfinalist2">
+                Loser 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tournament-buttons">
+        <button id="start-tournament" class="xp-button" data-i18n="tournament.start">Start Tournament</button>
+        <button id="back-to-tournament-menu" class="xp-button" data-i18n="tournament.back">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Match announcement screen -->
+  <div id="match-announcement" class="tournament-window" style="display: none">
+    <div class="tournament__window__titlebar">
+      <div class="tournament__window__title" data-i18n="tournament.match.announcement">Next Match</div>
+      <div class="tournament__window__controls">
+        <div class="tournament__window__button"></div>
+      </div>
+    </div>
+    <div class="tournament__window__content">
+      <div class="match-info">
+        <div class="match-number">Match <span id="match-number">1</span></div>
+        <div class="match-players">
+          <div class="player-card">
+            <div class="player-avatar left"></div>
+            <div id="match-player1" class="player-name" data-i18n="tournament.match.player1">Player 1</div>
+          </div>
+          <div class="versus">VS</div>
+          <div class="player-card">
+            <div class="player-avatar right"></div>
+            <div id="match-player2" class="player-name" data-i18n="tournament.match.player2">Player 2</div>
+          </div>
+        </div>
+        <div class="match-controls">
+          <button id="start-match" class="xp-button" data-i18n="tournament.match.start">Start Match</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tournament-game-container" style="display: none">
+    <canvas id="pongCanvas" width="1400" height="1000"></canvas>
+  </div>
+
+  <div id="tournament-end-game-screen" style="display: none">
+    <div class="tournament-window end-game-window">
+      <div class="tournament__window__titlebar">
+        <div class="tournament__window__title" data-i18n="tournament.end.game">Game Over</div>
+        <div class="tournament__window__controls">
+          <div class="tournament__window__button"></div>
+        </div>
+      </div>
+      <div class="tournament__window__content end-game-content">
+        <div class="winner-trophy">🏆</div>
+        <h1 id="winner-name" data-i18n="tournament.end.winner">Player Wins!</h1>
+        <div class="final-score" id="final-score">0 - 0</div>
+        <div class="end-game-buttons">
+          <button id="next-match" class="xp-button" data-i18n="tournament.end.next">Next Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tournament-results" class="tournament-window" style="display: none">
+    <div class="tournament__window__titlebar">
+      <div class="tournament__window__title" data-i18n="tournament.results.title">Tournament Results</div>
+      <div class="tournament__window__controls">
+        <div class="tournament__window__button"></div>
+      </div>
+    </div>
+    <div class="tournament__window__content">
+      <div class="winner-trophy">🏆</div>
+      <div class="winner-announcement">
+        <h2 data-i18n="tournament.results.champion">Tournament Champion</h2>
+        <div id="champion-name" data-i18n="tournament.results.champion-name">Player Name</div>
+      </div>
+      <div class="results-bracket">
+        <div class="bracket-title" data-i18n="tournament.results.final">Final Results</div>
+        <div class="bracket-diagram">
+          <div class="bracket-round">
+            <div class="bracket-match">
+              <div class="bracket-player" id="result-player1" data-i18n="tournament.results.player1">Player 1</div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="result-player2" data-i18n="tournament.results.player2">Player 2</div>
+            </div>
+            <div class="bracket-match">
+              <div class="bracket-player" id="result-player3" data-i18n="tournament.results.player3">Player 3</div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="result-player4" data-i18n="tournament.results.player4">Player 4</div>
+            </div>
+          </div>
+          <div class="bracket-connector"></div>
+          <div class="bracket-round">
+            <div class="bracket-match final-match">
+              <div class="bracket-player winner" id="result-finalist1" data-i18n="tournament.results.finalist1">
+                Winner 1
+              </div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="result-finalist2" data-i18n="tournament.results.finalist2">Winner 2</div>
+            </div>
+            <div class="bracket-match loser-final-match">
+              <div
+                class="bracket-player winner"
+                id="result-loserfinalist1"
+                data-i18n="tournament.results.loserfinalist1"
+              >
+                Loser 1
+              </div>
+              <div class="vs">VS</div>
+              <div class="bracket-player" id="result-loserfinalist2" data-i18n="tournament.results.loserfinalist2">
+                Loser 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="podium">
+        <div class="podium-place second-place">
+          <div class="medal">🥈</div>
+          <div class="podium-step"></div>
+          <div class="podium-player" id="second-place-name" data-i18n="tournament.results.second-place">Runner Up</div>
+        </div>
+        <div class="podium-place first-place">
+          <div class="medal">🥇</div>
+          <div class="podium-step"></div>
+          <div class="podium-player" id="first-place-name" data-i18n="tournament.results.champion">Champion</div>
+        </div>
+        <div class="podium-place third-place">
+          <div class="medal">🥉</div>
+          <div class="podium-step"></div>
+          <div class="podium-player" id="third-place-name" data-i18n="tournament.results.semi-finalist">
+            Semi-Finalist
+          </div>
+        </div>
+      </div>
+      <div class="tournament-buttons">
+        <button id="new-tournament" class="xp-button" data-i18n="tournament.results.new">New Tournament</button>
+        <button id="main-menu" class="xp-button" data-i18n="tournament.results.main-menu">Main Menu</button>
+      </div>
+    </div>
+  </div>
+</section>

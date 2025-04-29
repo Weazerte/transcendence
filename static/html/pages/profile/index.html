@@ -1,0 +1,62 @@
+<section class="profile">
+  <div class="profile__banner">
+    <img src="/static/images/banners/beach.jpg" alt="Profile" class="profile__banner-image" />
+    <div class="profile__avatar">
+      <img src="/static/images/avatars/duck.webp" alt="Profile" class="profile__avatar-image" />
+      <svg
+        viewBox="0 0 94 94"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="profile__avatar-border"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path
+          d="M3.37848 10.055C3.74806 6.53209 6.53209 3.74806 10.055 3.37848L11.9962 3.17484C35.2682 0.733472 58.7318 0.733472 82.0038 3.17484L83.9449 3.37848C87.4679 3.74806 90.2519 6.53209 90.6215 10.055L90.8252 11.9962C93.2665 35.2682 93.2665 58.7318 90.8252 82.0038L90.6215 83.945C90.2519 87.4679 87.4679 90.2519 83.9449 90.6215L82.0038 90.8252C58.7318 93.2665 35.2682 93.2665 11.9962 90.8252L10.055 90.6215C6.53209 90.2519 3.74806 87.4679 3.37848 83.9449L3.17484 82.0038C0.733472 58.7318 0.733472 35.2682 3.17484 11.9962L3.37848 10.055Z"
+          fill="url(#paint0_linear_108_1972)"
+          stroke="#ACC4EA"
+        />
+        <defs>
+          <linearGradient id="paint0_linear_108_1972" x1="47" y1="-1" x2="47" y2="95" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CCDFFF" />
+            <stop offset="1" stop-color="#92B1E6" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <button class="profile__view-stats-btn" id="view-stats-btn" data-i18n="profile.view-stats">Voir mes stats</button>
+  </div>
+  <div class="profile__content">
+
+      <h1 class="profile__alias">Mwa</h1>
+
+    </div>
+    <p class="profile__bio"></p>
+    <button class="profile__edit-btn" data-i18n="profile.edit">Modifier le profil</button>
+
+    <div class="profile__edit-form hidden">
+      <div class="profile__edit-form-row">
+        <label for="profile-alias" data-i18n="profile.edit.alias">
+          Pseudo :
+        </label>
+          <input type="text" id="profile-alias" class="profile__edit-alias" />
+      </div>
+
+      <div class="profile__edit-form-row">
+        <label for="profile-bio" data-i18n="profile.edit.bio">
+          Bio :
+        </label>
+        <textarea id="profile-bio" class="profile__edit-bio"></textarea>
+      </div>
+
+      <div class="profile__edit-form-row">
+        <label for="profile-avatar" data-i18n="profile.edit.avatar">
+          Avatar :
+        </label>
+        <input type="file" id="profile-avatar" class="profile__edit-avatar" accept="image/*" />
+      </div>
+
+      <button class="profile__save-btn" data-i18n="profile.edit.save">Sauvegarder</button>
+      <button class="profile__cancel-btn" data-i18n="profile.edit.cancel">Annuler</button>
+    </div>
+  </div>
+</section>
